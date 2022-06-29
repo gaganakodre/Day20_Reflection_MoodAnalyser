@@ -114,6 +114,48 @@ namespace Day20_reflection_MoodAnalyser
                 Assert.AreEqual(expected, exception.Message);
             }
         }
-    }
+        /// <summary>
+        /// TC-7.1  Given Hppy Should Return Happy
+        /// </summary>
+        [Test]
+        public void Given_HAPPYMessage_WithReflector_Should_ReturnHAPPY()
+        {
+            string result = MoodAnalyserFactory.SetField("HAPPY", "message");
+            Assert.AreEqual("HAPPY", result);
+        }
 
+        /// <summary>
+        /// TC-7.2  Set Field When Improper Should Throw Exception 
+        /// </summary>
+        [Test]
+        public void SetField_ImProper_ShouldThrowException()
+        {
+            try
+            {
+                string result = MoodAnalyserFactory.SetField("HAPPY", "me");
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual("Field is not found", exception.Message);
+            }
+        }
+
+        /// <summary>
+        /// TC-7.3  Set Null Messge  Should Throw Exception 
+        /// </summary>
+        [Test]
+        public void Setting_NullMessge_ShouldThrowException()
+        {
+            try
+            {
+                string result = MoodAnalyserFactory.SetField(null, "message");
+            }
+            catch (MoodAnalyserCustomException exception)
+            {
+                Assert.AreEqual("Message should not be null", exception.Message);
+            }
+        }
+
+    }
 }
+

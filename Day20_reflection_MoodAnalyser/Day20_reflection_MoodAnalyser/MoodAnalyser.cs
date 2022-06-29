@@ -9,7 +9,7 @@ namespace Day20_reflection_MoodAnalyser
    
         public class MoodAnalyser
         {
-            string message;
+            public string message;
 
             /// <summary>
             /// Default constructor
