@@ -8,18 +8,19 @@ namespace Day20_reflection_MoodAnalyser
 {
     public class MoodAnalyserCustomException : Exception
     {
+
         public enum ExceptionType
         {
-            EMPTY_MOOD,
-            NULL_MOOD,
             NO_SUCH_CLASS,
-            NO_SUCH_METHOD,
+            NO_SUCH_CONSTRUCTOR,
             EMPTY_MESSAGE,
             NULL_MESSAGE,
-
+            NO_SUCH_FIELD,
+            NO_SUCH_METHOD,
 
         }
         public ExceptionType exceptionType;
+
         public MoodAnalyserCustomException(ExceptionType exceptionType, string message) : base(message)
         {
             this.exceptionType = exceptionType;
