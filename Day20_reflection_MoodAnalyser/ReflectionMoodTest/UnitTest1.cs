@@ -32,7 +32,7 @@ namespace Day20_reflection_MoodAnalyser
         [Test]
         public void MoodAnalyserClassName_Improper_Should_ThrowMoodAnalyserException()
         {
-            object obj = null;
+            object obj = null;//here we are passing obj as a null to get the exception and to pass the test cases
 
             string expected = "Class not found";
             try
@@ -132,7 +132,7 @@ namespace Day20_reflection_MoodAnalyser
         {
             try
             {
-                string result = MoodAnalyserFactory.SetField("HAPPY", "me");
+                string result = MoodAnalyserFactory.SetField("HAPPY", "me");//here we are giving message as me
             }
             catch (MoodAnalyserCustomException exception)
             {
@@ -148,7 +148,7 @@ namespace Day20_reflection_MoodAnalyser
         {
             try
             {
-                string result = MoodAnalyserFactory.SetField(null, "message");
+                string result = MoodAnalyserFactory.SetField(null, "message");//we are passing null for message
             }
             catch (MoodAnalyserCustomException exception)
             {
